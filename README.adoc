@@ -1,13 +1,12 @@
 = RSR Template Repository
 
-image:https://img.shields.io/badge/license-Palimpsest--MPL--1.0-purple.svg[Palimpsest-MPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"] image:https://img.shields.io/badge/philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
+image:[Palimpsest-MPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"] image:[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 :toc:
 :sectnums:
 
 // Badges
 image:https://img.shields.io/badge/RSR-Infrastructure-cd7f32[RSR Infrastructure]
 image:https://img.shields.io/badge/Phase-Maintenance-brightgreen[Phase]
-image:https://img.shields.io/badge/License-AGPL%20OR%20Palimpsest-blue[License]
 image:https://img.shields.io/badge/Guix-Primary-purple?logo=gnu[Guix]
 
 == Overview
