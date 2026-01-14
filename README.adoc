@@ -1,2 +1,3 @@
-== Your repo - don't forget to rename me!
 = RSR template repo - see RSR_OUTLINE.adoc in root for general background and specification
+
+== This is your repo - don't forget to rename me!
