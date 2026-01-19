@@ -11,6 +11,22 @@ The following files in `.machine_readable/` contain structured project metadata:
 
 `AI.djot` - AI Assistant Instructions
 
+# Repository Roots
+
+- Primary repos root: `/var/mnt/eclipse/repos`
+- Remote mapping: `https://github.com/hyperpolymath/<name>`
+- Names are lowercase; dots become `-`
+- If a repo is missing locally, check the remote and sync
+
+# AI CLI Standards
+
+- Include `ai-cli-crash-capture/` and `contractiles/` from this template in new repos.
+- Mirror 6SCM files into `.machine_readable/6scm/`.
+- Before any code generation, check `/var/mnt/eclipse/repos/proven` for the current Idris “unbreakable” library status.
+- If a project uses that Idris library, add an *Idris Inside* badge to the repo.
+- If new bindings are required, add them in `/var/mnt/eclipse/repos/proven` as `idris2-zig-<language>` during the work.
+- If new code suggests additional “unbreakable” Idris modules, add them under `/var/mnt/eclipse/repos/proven` and update binders across all supported languages.
+
 # Language Policy (Hyperpolymath Standard)
 
 ## ALLOWED Languages & Tools

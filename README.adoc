@@ -1,3 +1,12 @@
 = RSR template repo - see RSR_OUTLINE.adoc in root for general background and specification
 
 == This is your repo - don't forget to rename me!
+
+== AI CLI standards
+
+- Include `ai-cli-crash-capture/` and `contractiles/` from this template in new repos.
+- Mirror 6SCM files into `.machine_readable/6scm/`.
+- Before any code generation, check `/var/mnt/eclipse/repos/proven` for the current Idris “unbreakable” library status.
+- If a project uses that Idris library, add an *Idris Inside* badge to the repo.
+- If new bindings are required, add them in `/var/mnt/eclipse/repos/proven` as `idris2-zig-<language>` during the work.
+- If new code suggests additional “unbreakable” Idris modules, add them under `/var/mnt/eclipse/repos/proven` and update binders across all supported languages.
