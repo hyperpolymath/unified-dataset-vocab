@@ -2,11 +2,42 @@
 
 == This is your repo - don't forget to rename me!
 
+== ABI/FFI Standards (Hyperpolymath Universal Standard)
+
+**All repos with foreign function interfaces MUST follow this standard:**
+
+* **ABI (Application Binary Interface)** → **Idris2** (`src/abi/*.idr`)
+** Type definitions with dependent type proofs
+** Memory layout verification
+** Platform-specific ABIs with compile-time selection
+** Formal verification of interface correctness
+
+* **FFI (Foreign Function Interface)** → **Zig** (`ffi/zig/src/*.zig`)
+** C-compatible function implementations
+** Zero-cost abstractions
+** Memory-safe by default
+** Cross-compilation support
+
+* **Generated C Headers** → Auto-generated from Idris2 ABI (`generated/abi/*.h`)
+** Bridge between Idris2 and Zig
+** Consumed by any language via C ABI
+
+**Directory Structure:**
+----
+project/
+├── src/abi/          # Idris2 ABI definitions (REQUIRED)
+├── ffi/zig/          # Zig FFI implementation (REQUIRED)
+├── generated/abi/    # Auto-generated C headers
+└── bindings/         # Language-specific wrappers (optional)
+----
+
+**See:** `ABI-FFI-README.md` for complete documentation
+
 == AI CLI standards
 
 - Include `ai-cli-crash-capture/` and `contractiles/` from this template in new repos.
-- Mirror 6SCM files into `.machine_readable/6scm/`.
-- Before any code generation, check `/var/mnt/eclipse/repos/proven` for the current Idris “unbreakable” library status.
+- Mirror 6SCM files into `.machine_readable/` (NOT `.machine_readable/6scm/`).
+- Before any code generation, check `/var/mnt/eclipse/repos/proven` for the current Idris "unbreakable" library status.
 - If a project uses that Idris library, add an *Idris Inside* badge to the repo.
 - If new bindings are required, add them in `/var/mnt/eclipse/repos/proven` as `idris2-zig-<language>` during the work.
-- If new code suggests additional “unbreakable” Idris modules, add them under `/var/mnt/eclipse/repos/proven` and update binders across all supported languages.
+- If new code suggests additional "unbreakable" Idris modules, add them under `/var/mnt/eclipse/repos/proven` and update binders across all supported languages.
