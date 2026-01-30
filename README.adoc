@@ -52,7 +52,7 @@ ReScript web projects in the hyperpolymath ecosystem **MUST** use these formally
 |===
 |Library |Purpose |Status
 
-|link:https://github.com/hyperpolymath/rescript-safe-dom[rescript-safe-dom]
+|link:https://github.com/hyperpolymath/rescript-dom-mounter[rescript-dom-mounter]
 |Formally verified DOM mounting
 |**REQUIRED**
 
@@ -98,4 +98,4 @@ SafeDOM.mountSafe("#app", html,
 ✓ Type-safe operations (ReScript + Idris2)
 ✓ Zero runtime overhead (proofs erased)
 
-See link:https://github.com/hyperpolymath/rescript-safe-dom[rescript-safe-dom documentation] for full details.
+See link:https://github.com/hyperpolymath/rescript-dom-mounter[rescript-dom-mounter documentation] for full details.
