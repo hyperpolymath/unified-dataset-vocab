@@ -41,3 +41,61 @@ project/
 - If a project uses that Idris library, add an *Idris Inside* badge to the repo.
 - If new bindings are required, add them in `/var/mnt/eclipse/repos/proven` as `idris2-zig-<language>` during the work.
 - If new code suggests additional "unbreakable" Idris modules, add them under `/var/mnt/eclipse/repos/proven` and update binders across all supported languages.
+
+== Standard Dependencies
+
+=== Web Projects
+
+ReScript web projects in the hyperpolymath ecosystem **MUST** use these formally verified components:
+
+[cols="1,2,1"]
+|===
+|Library |Purpose |Status
+
+|link:https://github.com/hyperpolymath/rescript-safe-dom[rescript-safe-dom]
+|Formally verified DOM mounting
+|**REQUIRED**
+
+|link:https://github.com/hyperpolymath/rescript-tea[rescript-tea]
+|TEA architecture framework
+|Recommended
+
+|link:https://github.com/hyperpolymath/cadre-tea-router[cadre-tea-router]
+|Proven-safe URL routing
+|Recommended
+
+|link:https://github.com/hyperpolymath/proven[proven]
+|Idris2 formally verified library
+|Core Dependency
+|===
+
+==== Why SafeDOM is Required
+
+Traditional DOM mounting can fail:
+
+[source,javascript]
+----
+// ❌ UNSAFE: Can crash with null pointer
+const el = document.getElementById('app')
+el.innerHTML = html  // 💥
+----
+
+SafeDOM provides **compile-time proofs** that DOM operations cannot fail:
+
+[source,rescript]
+----
+// ✅ PROVEN SAFE: Mathematically guaranteed
+SafeDOM.mountSafe("#app", html,
+  ~onSuccess=el => Console.log("Success"),
+  ~onError=err => Console.error(err))
+----
+
+**Mathematical Guarantees:**
+
+✓ No null pointer dereferences (Idris2 proof)
+✓ No invalid CSS selectors (dependent types)
+✓ No malformed HTML (balanced tag checking)
+✓ Type-safe operations (ReScript + Idris2)
+✓ Zero runtime overhead (proofs erased)
+
+See link:https://github.com/hyperpolymath/rescript-safe-dom[rescript-safe-dom documentation] for full details.

@@ -1,4 +1,4 @@
-;; SPDX-License-Identifier: PMPL-1.0
+;; SPDX-License-Identifier: PMPL-1.0-or-later
 ;; STATE.scm - Project state for rsr-template-repo
 
 (state
