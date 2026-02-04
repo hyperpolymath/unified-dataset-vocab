@@ -5,7 +5,7 @@
 (ecosystem
   (version "1.0.0")
   (name "rsr-template-repo")
-  (type "library")  ;; or: application, tool, specification, template
+  (type "library")  ;; or: application, library, specification, template
   (purpose "Hyperpolymath ecosystem component")
 
   (position-in-ecosystem
@@ -25,4 +25,4 @@
 
   (what-this-is-not
     "This is not a standalone project - it integrates with "
-    "the broader hyperpolymath tooling ecosystem."))
+    "the broader hyperpolymath librarying ecosystem."))
