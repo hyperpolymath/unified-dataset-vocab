@@ -33,8 +33,40 @@ project/
 
 **See:** `ABI-FFI-README.md` for complete documentation
 
+== AI Gatekeeper Protocol (MANDATORY)
+
+**CRITICAL:** All hyperpolymath repos MUST include an AI manifest.
+
+* **File:** `0-AI-MANIFEST.a2ml` (included in this template)
+* **Purpose:** Universal entry point for ALL AI agents (Claude, Gemini, OpenAI, etc.)
+* **Location:** Repository root (alphabetically first)
+* **Customize:** Update `[YOUR-REPO-NAME]` placeholders and repository structure section
+
+**The manifest declares:**
+
+* Canonical file locations (e.g., "SCM files ONLY in `.machine_readable/`")
+* Critical invariants (rules that must NEVER be violated)
+* Repository structure and organization
+* Lifecycle hooks (on-enter, on-exit) for session logging
+
+**Benefits:**
+
+* ✅ Prevents duplicate file errors (e.g., SCM files in wrong locations)
+* ✅ Context preserved across sessions and AI platforms
+* ✅ No repeated explanations - mechanical enforcement
+* ✅ Works universally (not just Claude)
+
+**See:** link:https://github.com/hyperpolymath/0-ai-gatekeeper-protocol[AI Gatekeeper Protocol] for details
+
+**Enforcement:**
+
+* MCP server (mcp-repo-guardian) - Hard enforcement for Claude
+* FUSE wrapper (repo-guardian-fs) - Universal enforcement (coming soon)
+* CI/CD validation - Continuous compliance checking
+
 == AI CLI standards
 
+- **FIRST:** Customize `0-AI-MANIFEST.a2ml` for your repo before any other work
 - Include `ai-cli-crash-capture/` and `contractiles/` from this template in new repos.
 - Mirror 6SCM files into `.machine_readable/` (NOT `.machine_readable/6scm/`).
 - Before any code generation, check `/var/mnt/eclipse/repos/proven` for the current Idris "unbreakable" library status.
