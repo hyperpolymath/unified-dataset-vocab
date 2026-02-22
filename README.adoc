@@ -131,3 +131,8 @@ SafeDOM.mountSafe("#app", html,
 ✓ Zero runtime overhead (proofs erased)
 
 See link:https://github.com/hyperpolymath/rescript-dom-mounter[rescript-dom-mounter documentation] for full details.
+
+
+== Architecture
+
+See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion dashboard.
