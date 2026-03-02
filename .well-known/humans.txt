@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# humans.txt — https://humanstxt.org/
+
+/* TEAM */
+Name: Jonathan D.A. Jewell
+Role: Lead Maintainer
+Site: https://github.com/hyperpolymath
+Location: United Kingdom
+
+/* SITE */
+Standards: Rhodium Standard Repositories (RSR)
+Components: Idris2 ABI, Zig FFI
+Language: English
+Doctype: AsciiDoc

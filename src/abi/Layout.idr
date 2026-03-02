@@ -1,3 +1,4 @@
+||| SPDX-License-Identifier: PMPL-1.0-or-later
 ||| Memory Layout Proofs
 |||
 ||| This module provides formal proofs about memory layout, alignment,
@@ -5,9 +6,9 @@
 |||
 ||| @see https://en.wikipedia.org/wiki/Data_structure_alignment
 
-module {{PROJECT}}.ABI.Layout
+module UnifiedDatasetVocab.ABI.Layout
 
-import {{PROJECT}}.ABI.Types
+import UnifiedDatasetVocab.ABI.Types
 import Data.Vect
 import Data.So
 

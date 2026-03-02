@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# security.txt — https://securitytxt.org/
+# Canonical location: .well-known/security.txt
+
+Contact: https://github.com/hyperpolymath/unified-dataset-vocab/security/advisories/new
+Contact: mailto:j.d.a.jewell@open.ac.uk
+Expires: 2027-03-02T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://github.com/hyperpolymath/unified-dataset-vocab/.well-known/security.txt
+Policy: https://github.com/hyperpolymath/unified-dataset-vocab/blob/main/SECURITY.md

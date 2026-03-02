@@ -1,3 +1,4 @@
+||| SPDX-License-Identifier: PMPL-1.0-or-later
 ||| Foreign Function Interface Declarations
 |||
 ||| This module declares all C-compatible functions that will be
@@ -6,10 +7,10 @@
 ||| All functions are declared here with type signatures and safety proofs.
 ||| Implementations live in ffi/zig/
 
-module {{PROJECT}}.ABI.Foreign
+module UnifiedDatasetVocab.ABI.Foreign
 
-import {{PROJECT}}.ABI.Types
-import {{PROJECT}}.ABI.Layout
+import UnifiedDatasetVocab.ABI.Types
+import UnifiedDatasetVocab.ABI.Layout
 
 %default total
 
@@ -20,7 +21,7 @@ import {{PROJECT}}.ABI.Layout
 ||| Initialize the library
 ||| Returns a handle to the library instance, or Nothing on failure
 export
-%foreign "C:{{project}}_init, lib{{project}}"
+%foreign "C:unified_dataset_vocab_init, libunified_dataset_vocab"
 prim__init : PrimIO Bits64
 
 ||| Safe wrapper for library initialization
@@ -32,7 +33,7 @@ init = do
 
 ||| Clean up library resources
 export
-%foreign "C:{{project}}_free, lib{{project}}"
+%foreign "C:unified_dataset_vocab_free, libunified_dataset_vocab"
 prim__free : Bits64 -> PrimIO ()
 
 ||| Safe wrapper for cleanup
@@ -46,7 +47,7 @@ free h = primIO (prim__free (handlePtr h))
 
 ||| Example operation: process data
 export
-%foreign "C:{{project}}_process, lib{{project}}"
+%foreign "C:unified_dataset_vocab_process, libunified_dataset_vocab"
 prim__process : Bits64 -> Bits32 -> PrimIO Bits32
 
 ||| Safe wrapper with error handling
@@ -69,12 +70,12 @@ prim__getString : Bits64 -> String
 
 ||| Free C string
 export
-%foreign "C:{{project}}_free_string, lib{{project}}"
+%foreign "C:unified_dataset_vocab_free_string, libunified_dataset_vocab"
 prim__freeString : Bits64 -> PrimIO ()
 
 ||| Get string result from library
 export
-%foreign "C:{{project}}_get_string, lib{{project}}"
+%foreign "C:unified_dataset_vocab_get_string, libunified_dataset_vocab"
 prim__getResult : Bits64 -> PrimIO Bits64
 
 ||| Safe string getter
@@ -95,7 +96,7 @@ getString h = do
 
 ||| Process array data
 export
-%foreign "C:{{project}}_process_array, lib{{project}}"
+%foreign "C:unified_dataset_vocab_process_array, libunified_dataset_vocab"
 prim__processArray : Bits64 -> Bits64 -> Bits32 -> PrimIO Bits32
 
 ||| Safe array processor
@@ -122,7 +123,7 @@ processArray h buf len = do
 
 ||| Get last error message
 export
-%foreign "C:{{project}}_last_error, lib{{project}}"
+%foreign "C:unified_dataset_vocab_last_error, libunified_dataset_vocab"
 prim__lastError : PrimIO Bits64
 
 ||| Retrieve last error as string
@@ -149,7 +150,7 @@ errorDescription NullPointer = "Null pointer"
 
 ||| Get library version
 export
-%foreign "C:{{project}}_version, lib{{project}}"
+%foreign "C:unified_dataset_vocab_version, libunified_dataset_vocab"
 prim__version : PrimIO Bits64
 
 ||| Get version as string
@@ -161,7 +162,7 @@ version = do
 
 ||| Get library build info
 export
-%foreign "C:{{project}}_build_info, lib{{project}}"
+%foreign "C:unified_dataset_vocab_build_info, libunified_dataset_vocab"
 prim__buildInfo : PrimIO Bits64
 
 ||| Get build information
@@ -182,7 +183,7 @@ Callback = Bits64 -> Bits32 -> Bits32
 
 ||| Register a callback
 export
-%foreign "C:{{project}}_register_callback, lib{{project}}"
+%foreign "C:unified_dataset_vocab_register_callback, libunified_dataset_vocab"
 prim__registerCallback : Bits64 -> AnyPtr -> PrimIO Bits32
 
 ||| Safe callback registration
@@ -205,7 +206,7 @@ registerCallback h cb = do
 
 ||| Check if library is initialized
 export
-%foreign "C:{{project}}_is_initialized, lib{{project}}"
+%foreign "C:unified_dataset_vocab_is_initialized, libunified_dataset_vocab"
 prim__isInitialized : Bits64 -> PrimIO Bits32
 
 ||| Check initialization status

@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# ai.txt — AI agent access and policy declaration
+# Repository: unified-dataset-vocab
+
+User-agent: *
+Allow: /
+Disallow: /.git/
+
+# AI manifest for session bootstrapping
+AI-Manifest: /0-AI-MANIFEST.a2ml
+
+# Machine-readable metadata
+Machine-Readable: /.machine_readable/STATE.scm
+Machine-Readable: /.machine_readable/META.scm
+Machine-Readable: /.machine_readable/ECOSYSTEM.scm
+Machine-Readable: /.machine_readable/AGENTIC.scm
+Machine-Readable: /.machine_readable/NEUROSYM.scm
+Machine-Readable: /.machine_readable/PLAYBOOK.scm
+
+# License
+License: PMPL-1.0-or-later
+License-URL: https://github.com/hyperpolymath/palimpsest-license
+
+# Contact
+Contact: https://github.com/hyperpolymath

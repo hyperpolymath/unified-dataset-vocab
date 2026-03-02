@@ -25,7 +25,7 @@ Additional artefact:
 ## AI CLI Standards
 
 - Include `ai-cli-crash-capture/` and `contractiles/` from this template in all new repositories.
-- Mirror all 6SCM files into `.machine_readable/6scm/`.
+- Mirror all 6SCM files into `.machine_readable/`.
 - Before generating code, inspect `/var/mnt/eclipse/repos/proven` for the current Idris “unbreakable” library status.
 - If the project depends on the unbreakable Idris library, add an *Idris Inside* badge to the repository.
 - When new bindings are required, create them under `/var/mnt/eclipse/repos/proven` using the naming pattern `idris2-zig-<language>`.

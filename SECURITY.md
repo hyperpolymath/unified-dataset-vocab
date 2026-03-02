@@ -1,22 +1,6 @@
+<!-- SPDX-License-Identifier: PMPL-1.0-or-later -->
 # Security Policy
 
-<!-- 
-============================================================================
-TEMPLATE INSTRUCTIONS (delete this block before publishing)
-============================================================================
-Replace all {{PLACEHOLDER}} values with your information:
-  {{PROJECT_NAME}}     - Your project name
-  {{OWNER}}            - GitHub username or org (e.g., hyperpolymath)
-  {{REPO}}             - Repository name
-  {{SECURITY_EMAIL}}   - Security contact email
-  {{PGP_FINGERPRINT}}  - Your PGP key fingerprint (40 chars, no spaces)
-  {{PGP_KEY_URL}}      - URL to your public PGP key
-  {{WEBSITE}}          - Your website/domain
-  {{CURRENT_YEAR}}     - Current year for copyright
-
-Optional: Remove sections that don't apply (e.g., PGP if you don't use it)
-============================================================================
--->
 
 We take security seriously. We appreciate your efforts to responsibly disclose vulnerabilities and will make every effort to acknowledge your contributions.
 
@@ -40,7 +24,7 @@ We take security seriously. We appreciate your efforts to responsibly disclose v
 
 The preferred method for reporting security vulnerabilities is through GitHub's Security Advisory feature:
 
-1. Navigate to [Report a Vulnerability](https://github.com/{{OWNER}}/{{REPO}}/security/advisories/new)
+1. Navigate to [Report a Vulnerability](https://github.com/hyperpolymath/unified-dataset-vocab/security/advisories/new)
 2. Click **"Report a vulnerability"**
 3. Complete the form with as much detail as possible
 4. Submit — we'll receive a private notification
@@ -58,19 +42,19 @@ If you cannot use GitHub Security Advisories, you may email us directly:
 
 | | |
 |---|---|
-| **Email** | {{SECURITY_EMAIL}} |
-| **PGP Key** | [Download Public Key]({{PGP_KEY_URL}}) |
-| **Fingerprint** | `{{PGP_FINGERPRINT}}` |
+| **Email** | j.d.a.jewell@open.ac.uk |
+| **PGP Key** | [Download Public Key](https://github.com/hyperpolymath.gpg) |
+| **Fingerprint** | `See https://github.com/hyperpolymath.gpg` |
 
 ```bash
 # Import our PGP key
-curl -sSL {{PGP_KEY_URL}} | gpg --import
+curl -sSL https://github.com/hyperpolymath.gpg | gpg --import
 
 # Verify fingerprint
-gpg --fingerprint {{SECURITY_EMAIL}}
+gpg --fingerprint j.d.a.jewell@open.ac.uk
 
 # Encrypt your report
-gpg --armor --encrypt --recipient {{SECURITY_EMAIL}} report.txt
+gpg --armor --encrypt --recipient j.d.a.jewell@open.ac.uk report.txt
 ```
 
 > **⚠️ Important:** Do not report security vulnerabilities through public GitHub issues, pull requests, discussions, or social media.
@@ -203,7 +187,7 @@ If we cannot reach agreement on disclosure timing, we default to 90 days from yo
 
 The following are within scope for security research:
 
-- This repository (`{{OWNER}}/{{REPO}}`) and all its code
+- This repository (`hyperpolymath/unified-dataset-vocab`) and all its code
 - Official releases and packages published from this repository
 - Documentation that could lead to security issues
 - Build and deployment configurations in this repository
@@ -322,7 +306,7 @@ Recognition includes:
 To stay informed about security updates:
 
 - **Watch this repository**: Click "Watch" → "Custom" → Select "Security alerts"
-- **GitHub Security Advisories**: Published at [Security Advisories](https://github.com/{{OWNER}}/{{REPO}}/security/advisories)
+- **GitHub Security Advisories**: Published at [Security Advisories](https://github.com/hyperpolymath/unified-dataset-vocab/security/advisories)
 - **Release notes**: Security fixes noted in [CHANGELOG](CHANGELOG.md)
 
 ### Update Policy
@@ -348,7 +332,7 @@ To stay informed about security updates:
 
 ## Security Best Practices
 
-When using {{PROJECT_NAME}}, we recommend:
+When using Unified Dataset Vocab, we recommend:
 
 ### General
 
@@ -370,8 +354,8 @@ When using {{PROJECT_NAME}}, we recommend:
 
 ## Additional Resources
 
-- [Our PGP Public Key]({{PGP_KEY_URL}})
-- [Security Advisories](https://github.com/{{OWNER}}/{{REPO}}/security/advisories)
+- [Our PGP Public Key](https://github.com/hyperpolymath.gpg)
+- [Security Advisories](https://github.com/hyperpolymath/unified-dataset-vocab/security/advisories)
 - [Changelog](CHANGELOG.md)
 - [Contributing Guidelines](CONTRIBUTING.md)
 - [CVE Database](https://cve.mitre.org/)
@@ -383,8 +367,8 @@ When using {{PROJECT_NAME}}, we recommend:
 
 | Purpose | Contact |
 |---------|---------|
-| **Security issues** | [Report via GitHub](https://github.com/{{OWNER}}/{{REPO}}/security/advisories/new) or {{SECURITY_EMAIL}} |
-| **General questions** | [GitHub Discussions](https://github.com/{{OWNER}}/{{REPO}}/discussions) |
+| **Security issues** | [Report via GitHub](https://github.com/hyperpolymath/unified-dataset-vocab/security/advisories/new) or j.d.a.jewell@open.ac.uk |
+| **General questions** | [GitHub Discussions](https://github.com/hyperpolymath/unified-dataset-vocab/discussions) |
 | **Other enquiries** | See [README](README.md) for contact information |
 
 ---
@@ -399,8 +383,8 @@ This security policy may be updated from time to time. Significant changes will 
 
 ---
 
-*Thank you for helping keep {{PROJECT_NAME}} and its users safe.* 🛡️
+*Thank you for helping keep Unified Dataset Vocab and its users safe.* 🛡️
 
 ---
 
-<sub>Last updated: {{CURRENT_YEAR}} · Policy version: 1.0.0</sub>
+<sub>Last updated: 2026 · Policy version: 1.0.0</sub>

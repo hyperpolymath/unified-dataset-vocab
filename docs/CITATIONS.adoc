@@ -1,34 +1,35 @@
-= RSR-template-repo - Citation Guide
+// SPDX-License-Identifier: PMPL-1.0-or-later
+= unified-dataset-vocab - Citation Guide
 :toc:
 
 == BibTeX
 
 [source,bibtex]
 ----
-@software{rsr-template-repo_2025,
-  author = {Polymath, Hyper},
-  title = {RSR-template-repo},
-  year = {2025},
-  url = {https://github.com/hyperpolymath/RSR-template-repo},
-  license = {AGPL-3.0-or-later}
+@software{unified-dataset-vocab_2026,
+  author = {Jewell, Jonathan D.A.},
+  title = {unified-dataset-vocab},
+  year = {2026},
+  url = {https://github.com/hyperpolymath/unified-dataset-vocab},
+  license = {PMPL-1.0-or-later}
 }
 ----
 
 == Harvard Style
 
-Polymath, H. (2025) _RSR-template-repo_ [Computer software]. Available at: https://github.com/hyperpolymath/RSR-template-repo
+Jewell, J.D.A. (2026) _unified-dataset-vocab_ [Computer software]. Available at: https://github.com/hyperpolymath/unified-dataset-vocab
 
 == OSCOLA
 
-Hyper Polymath, 'RSR-template-repo' (2025) <https://github.com/hyperpolymath/RSR-template-repo>
+Jonathan D.A. Jewell, 'unified-dataset-vocab' (2026) <https://github.com/hyperpolymath/unified-dataset-vocab>
 
 == MLA
 
-Polymath, Hyper. "RSR-template-repo." 2025, github.com/hyperpolymath/RSR-template-repo.
+Jewell, Jonathan D.A. "unified-dataset-vocab." 2026, github.com/hyperpolymath/unified-dataset-vocab.
 
 == APA 7
 
-Polymath, H. (2025). _RSR-template-repo_ [Computer software]. GitHub. https://github.com/hyperpolymath/RSR-template-repo
+Jewell, J.D.A. (2026). _unified-dataset-vocab_ [Computer software]. GitHub. https://github.com/hyperpolymath/unified-dataset-vocab
 
 == See Also
 

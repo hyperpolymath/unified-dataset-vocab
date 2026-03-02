@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# CODEOWNERS — unified-dataset-vocab
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in this repository
+* @hyperpolymath

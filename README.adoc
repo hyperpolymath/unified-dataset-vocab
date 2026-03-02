@@ -1,138 +1,70 @@
-= RSR template repo - see RSR_OUTLINE.adoc in root for general background and specification
+// SPDX-License-Identifier: PMPL-1.0-or-later
+= Unified Dataset Vocab
+:toc: preamble
+:sectnums:
 
-== This is your repo - don't forget to rename me!
+image:https://img.shields.io/badge/License-PMPL--1.0-blue[License,link="https://github.com/hyperpolymath/palimpsest-license"]
+image:https://img.shields.io/badge/RSR-Compliant-cd7f32[RSR Compliant]
+
+== Overview
+
+**Unified Dataset Vocab** provides formal vocabulary definitions and taxonomies for
+describing datasets across the hyperpolymath ecosystem. It bridges schema design,
+data engineering, and formal verification through a type-safe vocabulary layer backed
+by Idris2 proofs and a Zig FFI for cross-language consumption.
+
+== Key Features
+
+* **Formal Definitions** -- Vocabulary terms defined with dependent types in Idris2
+* **Taxonomy Logic** -- Hierarchical classification of dataset attributes
+* **A2ML Integration** -- Markup hooks for AI-readable metadata annotations
+* **Cross-language FFI** -- Zig-based C ABI so any language can consume the vocabulary
+* **Compile-time Proofs** -- Memory layout and ABI correctness verified at compile time
 
 == ABI/FFI Standards (Hyperpolymath Universal Standard)
 
-**All repos with foreign function interfaces MUST follow this standard:**
+All repos with foreign function interfaces follow this standard:
 
-* **ABI (Application Binary Interface)** → **Idris2** (`src/abi/*.idr`)
-** Type definitions with dependent type proofs
-** Memory layout verification
-** Platform-specific ABIs with compile-time selection
-** Formal verification of interface correctness
+* **ABI (Application Binary Interface)** -- Idris2 (`src/abi/*.idr`)
+* **FFI (Foreign Function Interface)** -- Zig (`ffi/zig/src/*.zig`)
+* **Generated C Headers** -- Auto-generated from Idris2 ABI (`generated/abi/*.h`)
 
-* **FFI (Foreign Function Interface)** → **Zig** (`ffi/zig/src/*.zig`)
-** C-compatible function implementations
-** Zero-cost abstractions
-** Memory-safe by default
-** Cross-compilation support
+See link:ABI-FFI-README.md[ABI-FFI-README.md] for complete documentation.
 
-* **Generated C Headers** → Auto-generated from Idris2 ABI (`generated/abi/*.h`)
-** Bridge between Idris2 and Zig
-** Consumed by any language via C ABI
+== Directory Structure
 
-**Directory Structure:**
+[source]
 ----
-project/
-├── src/abi/          # Idris2 ABI definitions (REQUIRED)
-├── ffi/zig/          # Zig FFI implementation (REQUIRED)
-├── generated/abi/    # Auto-generated C headers
-└── bindings/         # Language-specific wrappers (optional)
+unified-dataset-vocab/
+├── src/abi/              # Idris2 ABI definitions (formal proofs)
+│   ├── Types.idr         # Core type definitions
+│   ├── Layout.idr        # Memory layout verification
+│   └── Foreign.idr       # FFI function declarations
+├── ffi/zig/              # Zig FFI implementation
+│   ├── build.zig         # Build configuration
+│   ├── src/main.zig      # C-compatible implementation
+│   └── test/             # Integration tests
+├── examples/             # Usage examples (ReScript, Deno)
+├── contractiles/         # Operational contracts (K9, Must, Trust, Dust, Lust)
+├── .machine_readable/    # SCM files (STATE, META, ECOSYSTEM, etc.)
+├── .well-known/          # security.txt, humans.txt, ai.txt
+└── docs/                 # Documentation and citations
 ----
-
-**See:** `ABI-FFI-README.md` for complete documentation
-
-== AI Gatekeeper Protocol (MANDATORY)
-
-**CRITICAL:** All hyperpolymath repos MUST include an AI manifest.
-
-* **File:** `0-AI-MANIFEST.a2ml` (included in this template)
-* **Purpose:** Universal entry point for ALL AI agents (Claude, Gemini, OpenAI, etc.)
-* **Location:** Repository root (alphabetically first)
-* **Customize:** Update `[YOUR-REPO-NAME]` placeholders and repository structure section
-
-**The manifest declares:**
-
-* Canonical file locations (e.g., "SCM files ONLY in `.machine_readable/`")
-* Critical invariants (rules that must NEVER be violated)
-* Repository structure and organization
-* Lifecycle hooks (on-enter, on-exit) for session logging
-
-**Benefits:**
-
-* ✅ Prevents duplicate file errors (e.g., SCM files in wrong locations)
-* ✅ Context preserved across sessions and AI platforms
-* ✅ No repeated explanations - mechanical enforcement
-* ✅ Works universally (not just Claude)
-
-**See:** link:https://github.com/hyperpolymath/0-ai-gatekeeper-protocol[AI Gatekeeper Protocol] for details
-
-**Enforcement:**
-
-* MCP server (mcp-repo-guardian) - Hard enforcement for Claude
-* FUSE wrapper (repo-guardian-fs) - Universal enforcement (coming soon)
-* CI/CD validation - Continuous compliance checking
-
-== AI CLI standards
-
-- **FIRST:** Customize `0-AI-MANIFEST.a2ml` for your repo before any other work
-- Include `ai-cli-crash-capture/` and `contractiles/` from this template in new repos.
-- Mirror 6SCM files into `.machine_readable/` (NOT `.machine_readable/6scm/`).
-- Before any code generation, check `/var/mnt/eclipse/repos/proven` for the current Idris "unbreakable" library status.
-- If a project uses that Idris library, add an *Idris Inside* badge to the repo.
-- If new bindings are required, add them in `/var/mnt/eclipse/repos/proven` as `idris2-zig-<language>` during the work.
-- If new code suggests additional "unbreakable" Idris modules, add them under `/var/mnt/eclipse/repos/proven` and update binders across all supported languages.
-
-== Standard Dependencies
-
-=== Web Projects
-
-ReScript web projects in the hyperpolymath ecosystem **MUST** use these formally verified components:
-
-[cols="1,2,1"]
-|===
-|Library |Purpose |Status
-
-|link:https://github.com/hyperpolymath/rescript-dom-mounter[rescript-dom-mounter]
-|Formally verified DOM mounting
-|**REQUIRED**
-
-|link:https://github.com/hyperpolymath/rescript-tea[rescript-tea]
-|TEA architecture framework
-|Recommended
-
-|link:https://github.com/hyperpolymath/cadre-tea-router[cadre-tea-router]
-|Proven-safe URL routing
-|Recommended
-
-|link:https://github.com/hyperpolymath/proven[proven]
-|Idris2 formally verified library
-|Core Dependency
-|===
-
-==== Why SafeDOM is Required
-
-Traditional DOM mounting can fail:
-
-[source,javascript]
-----
-// ❌ UNSAFE: Can crash with null pointer
-const el = document.getElementById('app')
-el.innerHTML = html  // 💥
-----
-
-SafeDOM provides **compile-time proofs** that DOM operations cannot fail:
-
-[source,rescript]
-----
-// ✅ PROVEN SAFE: Mathematically guaranteed
-SafeDOM.mountSafe("#app", html,
-  ~onSuccess=el => Console.log("Success"),
-  ~onError=err => Console.error(err))
-----
-
-**Mathematical Guarantees:**
-
-✓ No null pointer dereferences (Idris2 proof)
-✓ No invalid CSS selectors (dependent types)
-✓ No malformed HTML (balanced tag checking)
-✓ Type-safe operations (ReScript + Idris2)
-✓ Zero runtime overhead (proofs erased)
-
-See link:https://github.com/hyperpolymath/rescript-dom-mounter[rescript-dom-mounter documentation] for full details.
-
 
 == Architecture
 
 See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion dashboard.
+
+== License
+
+SPDX-License-Identifier: PMPL-1.0-or-later
+
+Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath) <j.d.a.jewell@open.ac.uk>
+
+Licensed under the link:LICENSE[Palimpsest-MPL License Version 1.0] or any later version.
+
+== Links
+
+* https://github.com/hyperpolymath/unified-dataset-vocab[GitHub Repository]
+* https://github.com/hyperpolymath/palimpsest-license[Palimpsest License]
+* https://github.com/hyperpolymath/rhodium-standard-repositories[Rhodium Standard Repositories]

@@ -1,10 +1,10 @@
-# ⚠️ STOP - CRITICAL READING REQUIRED
+# STOP - CRITICAL READING REQUIRED
 
 **THIS FILE MUST BE READ FIRST BY ALL AI AGENTS**
 
 ## WHAT IS THIS?
 
-This is the AI manifest for **[YOUR-REPO-NAME]**. It declares:
+This is the AI manifest for **unified-dataset-vocab**. It declares:
 - Canonical file locations (where things MUST be, and nowhere else)
 - Critical invariants (rules that must NEVER be violated)
 - Repository structure and organization
@@ -44,37 +44,43 @@ Bot-specific instructions for:
 2. **Single source of truth** - `.machine_readable/` is authoritative
 3. **No stale metadata** - If root SCMs exist, they are OUT OF DATE
 4. **License consistency** - All code PMPL-1.0-or-later unless platform requires MPL-2.0
-5. **Author attribution** - Always "Jonathan D.A. Jewell <jonathan.jewell@open.ac.uk>"
+5. **Author attribution** - Always "Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>"
 
 ## REPOSITORY STRUCTURE
 
-<!-- CUSTOMIZE THIS SECTION FOR YOUR REPO -->
-
-This repo contains:
-
 ```
-[YOUR-REPO-NAME]/
+unified-dataset-vocab/
 ├── 0-AI-MANIFEST.a2ml         # THIS FILE (start here)
-├── README.md                   # Project overview
-├── [your source files]         # Main code
-├── .machine_readable/          # SCM files (6 files)
+├── README.adoc                # Project overview
+├── src/abi/                   # Idris2 ABI definitions (formal proofs)
+│   ├── Types.idr
+│   ├── Layout.idr
+│   └── Foreign.idr
+├── ffi/zig/                   # Zig FFI implementation
+│   ├── build.zig
+│   ├── src/main.zig
+│   └── test/integration_test.zig
+├── examples/                  # Usage examples
+├── contractiles/              # Operational contracts (K9, Must, Trust, Dust, Lust)
+├── .machine_readable/         # SCM files (6 files)
 │   ├── STATE.scm
 │   ├── META.scm
 │   ├── ECOSYSTEM.scm
 │   ├── AGENTIC.scm
 │   ├── NEUROSYM.scm
 │   └── PLAYBOOK.scm
-└── .bot_directives/            # Bot instructions
+├── .well-known/               # security.txt, humans.txt, ai.txt
+└── .bot_directives/           # Bot instructions
 ```
 
 ## SESSION STARTUP CHECKLIST
 
-✅ Read THIS file (0-AI-MANIFEST.a2ml) first
-✅ Understand canonical locations (.machine_readable/, .bot_directives/)
-✅ Know the invariants (no SCM duplication, etc.)
-✅ Check for MCP enforcement (if applicable)
-✅ Read `.machine_readable/STATE.scm` for current status
-✅ Read `.machine_readable/AGENTIC.scm` for interaction patterns
+- Read THIS file (0-AI-MANIFEST.a2ml) first
+- Understand canonical locations (.machine_readable/, .bot_directives/)
+- Know the invariants (no SCM duplication, etc.)
+- Check for MCP enforcement (if applicable)
+- Read `.machine_readable/STATE.scm` for current status
+- Read `.machine_readable/AGENTIC.scm` for interaction patterns
 
 ## LIFECYCLE HOOKS
 
@@ -110,7 +116,7 @@ After reading this file, demonstrate understanding by stating:
 ## META
 
 - **Format Version:** 1.0.0
-- **Created:** [DATE]
-- **Maintained By:** [YOUR-NAME/ORG]
+- **Created:** 2026-02-11
+- **Maintained By:** Jonathan D.A. Jewell (hyperpolymath)
 - **License:** PMPL-1.0-or-later
 - **Protocol:** https://github.com/hyperpolymath/0-ai-gatekeeper-protocol

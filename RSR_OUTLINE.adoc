@@ -69,7 +69,7 @@ just validate-rsr
 |Task runner with 50+ recipes
 
 |`LICENSE.txt`
-|AGPL + Palimpsest dual license
+|PMPL-1.0-or-later (Palimpsest-MPL)
 
 |`README.adoc`
 |This file
@@ -157,7 +157,7 @@ project/
 * `justfile`
 * `README.adoc`
 * `RSR_COMPLIANCE.adoc`
-* `LICENSE.txt` (AGPL + Palimpsest)
+* `LICENSE` (PMPL-1.0-or-later)
 * `.well-known/security.txt`
 * `.well-known/ai.txt`
 * `.well-known/humans.txt`
@@ -209,7 +209,7 @@ This template is part of:
 
 == License
 
-SPDX-License-Identifier: PMPL-1.0-or-later-or-later
+SPDX-License-Identifier: PMPL-1.0-or-later
 
 == Links
 
