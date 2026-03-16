@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: PMPL-1.0-or-later
+# Clade declaration — part of the gv-clade-index registry
+# See: https://github.com/hyperpolymath/gv-clade-index
+
+[identity]
+uuid = "0ce048b2-7653-5647-adb1-a4a16b274e6d"
+primary-forge = "github"
+primary-owner = "hyperpolymath"
+canonical-name = "unified-dataset-vocab"
+prefixed-name = "pt-unified-dataset-vocab"
+
+[clade]
+primary = "pt"
+secondary = []
+assigned = "2026-03-16"
+rationale = ""
+
+[forges]
+github = "hyperpolymath/unified-dataset-vocab"
+gitlab = "hyperpolymath/unified-dataset-vocab"
+bitbucket = "hyperpolymath/unified-dataset-vocab"
+
+[lineage]
+type = "standalone"
+parent = "Unified dataset vocabulary standard"
+born = "2026-03-16"
