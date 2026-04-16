@@ -1,4 +1,4 @@
-// UnifiedDatasetVocab FFI Implementation
+// UNIFIED_DATASET_VOCAB FFI Implementation
 //
 // This module implements the C-compatible FFI declared in src/abi/Foreign.idr
 // All types and layouts must match the Idris2 ABI definitions.
@@ -9,7 +9,7 @@ const std = @import("std");
 
 // Version information (keep in sync with project)
 const VERSION = "0.1.0";
-const BUILD_INFO = "UnifiedDatasetVocab built with Zig " ++ @import("builtin").zig_version_string;
+const BUILD_INFO = "UNIFIED_DATASET_VOCAB built with Zig " ++ @import("builtin").zig_version_string;
 
 /// Thread-local error storage
 threadlocal var last_error: ?[]const u8 = null;
