@@ -1,4 +1,4 @@
-<!-- SPDX-License-Identifier: PMPL-1.0-or-later -->
+<!-- SPDX-License-Identifier: MPL-2.0 -->
 # Clone the repository
 git clone https://github.com/hyperpolymath/unified-dataset-vocab.git
 cd unified-dataset-vocab

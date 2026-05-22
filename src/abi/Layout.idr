@@ -1,4 +1,4 @@
-||| SPDX-License-Identifier: PMPL-1.0-or-later
+||| SPDX-License-Identifier: MPL-2.0
 ||| Memory Layout Proofs
 |||
 ||| This module provides formal proofs about memory layout, alignment,

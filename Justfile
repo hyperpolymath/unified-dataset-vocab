@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 # Justfile for unified-dataset-vocab
 
 # Default recipe — list available commands
@@ -50,7 +50,7 @@ assail:
 # LLM context dump
 llm-context:
     @echo "Project: unified-dataset-vocab"
-    @echo "License: PMPL-1.0-or-later"
+    @echo "License: MPL-2.0"
     @test -f README.adoc && head -30 README.adoc || test -f README.md && head -30 README.md || echo "No README found"
 
 

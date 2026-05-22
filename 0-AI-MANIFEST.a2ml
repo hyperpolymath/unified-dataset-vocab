@@ -43,7 +43,7 @@ Bot-specific instructions for:
 1. **No SCM duplication** - Root must NOT contain .machine_readable/6a2/STATE.a2ml, .machine_readable/6a2/META.a2ml, etc.
 2. **Single source of truth** - `.machine_readable/` is authoritative
 3. **No stale metadata** - If root SCMs exist, they are OUT OF DATE
-4. **License consistency** - All code PMPL-1.0-or-later unless platform requires MPL-2.0
+4. **License consistency** - All code MPL-2.0 unless platform requires MPL-2.0
 5. **Author attribution** - Always "Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>"
 
 ## REPOSITORY STRUCTURE
@@ -118,5 +118,5 @@ After reading this file, demonstrate understanding by stating:
 - **Format Version:** 1.0.0
 - **Created:** 2026-02-11
 - **Maintained By:** Jonathan D.A. Jewell (hyperpolymath)
-- **License:** PMPL-1.0-or-later
+- **License:** MPL-2.0
 - **Protocol:** https://github.com/hyperpolymath/0-ai-gatekeeper-protocol

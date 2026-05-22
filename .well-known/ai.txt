@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: PMPL-1.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 # ai.txt — AI agent access and policy declaration
 # Repository: unified-dataset-vocab
 
@@ -18,7 +18,7 @@ Machine-Readable: /.machine_readable/NEUROSYM.scm
 Machine-Readable: /.machine_readable/PLAYBOOK.scm
 
 # License
-License: PMPL-1.0-or-later
+License: MPL-2.0
 License-URL: https://github.com/hyperpolymath/palimpsest-license
 
 # Contact
