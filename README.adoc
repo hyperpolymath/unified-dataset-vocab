@@ -1,9 +1,12 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 = Unified Dataset Vocab
+image:https://img.shields.io/badge/OpenSSF-Best_Practices-green?logo=openssourcesecurity[OpenSSF Best Practices,link="https://www.bestpractices.dev/en/projects/new?repo_url=https://github.com/hyperpolymath/unified-dataset-vocab"]
+
 :toc: preamble
 :sectnums:
 
-image:https://img.shields.io/badge/License-PMPL--1.0-blue[License,link="https://github.com/hyperpolymath/palimpsest-license"]
+image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[License: MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
 image:https://img.shields.io/badge/RSR-Compliant-cd7f32[RSR Compliant]
 
 == Overview
@@ -57,11 +60,9 @@ See link:TOPOLOGY.md[TOPOLOGY.md] for a visual architecture map and completion d
 
 == License
 
+This project is licensed under the Mozilla Public License, v. 2.0. See the `LICENSE` file for details.
+
 SPDX-License-Identifier: MPL-2.0
-
-Copyright (c) 2026 Jonathan D.A. Jewell (hyperpolymath) <j.d.a.jewell@open.ac.uk>
-
-Licensed under the link:LICENSE[Palimpsest-MPL License Version 1.0] or any later version.
 
 == Links
 
