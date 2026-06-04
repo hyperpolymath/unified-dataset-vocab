@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 // Template: QUICKSTART-USER.adoc — 5-minute path to working software
 // Replace unified-dataset-vocab, Unified Dataset Vocab — See README.adoc for details., just run, Unified Dataset Vocab started successfully. with actuals
 = unified-dataset-vocab — Quick Start for Users

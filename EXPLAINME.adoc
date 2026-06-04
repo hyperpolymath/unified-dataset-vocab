@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 = Unified Dataset Vocab — Show Me The Receipts
+image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[License: MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
+
 :toc:
 :icons: font
 
@@ -41,3 +44,10 @@ https://github.com/hyperpolymath/gossamer[gossamer].
 == Questions?
 
 Open an issue or reach out directly — happy to explain anything in more detail.
+
+
+== License
+
+This project is licensed under the Mozilla Public License, v. 2.0. See the `LICENSE` file for details.
+
+SPDX-License-Identifier: MPL-2.0

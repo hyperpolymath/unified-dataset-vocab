@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: MPL-2.0
+// Copyright (c) Jonathan D.A. Jewell <j.d.a.jewell@open.ac.uk>
 // Template: QUICKSTART-MAINTAINER.adoc — packaging, deploying, and maintaining
 // Replace unified-dataset-vocab, {{PACKAGE_NAME}}, {{DEPS}} with actuals
 = unified-dataset-vocab — Quick Start for Platform Maintainers
