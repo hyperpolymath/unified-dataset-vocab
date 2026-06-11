@@ -35,30 +35,25 @@
 # bumps for dependabot/fetch-metadata flow through the same path.
 
 name: Dependabot Auto-Merge
-
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-
 permissions:
-  contents: write        # needed to enable auto-merge
-  pull-requests: write   # needed to approve
+  contents: write # needed to enable auto-merge
+  pull-requests: write # needed to approve
   # NB: keep narrow — do NOT add secrets: read or id-token: write here.
-
 jobs:
   automerge:
     # Only run for PRs actually authored by Dependabot.
     if: github.actor == 'dependabot[bot]' && github.event.pull_request.user.login == 'dependabot[bot]'
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
     steps:
       - name: Fetch Dependabot metadata
         id: meta
         uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
       # --- Policy gate -------------------------------------------------------
       # Outputs from fetch-metadata we care about:
       #   update-type      → version-update:semver-{patch,minor,major}
@@ -107,7 +102,6 @@ jobs:
           echo "security=$is_security" >> "$GITHUB_OUTPUT"
           echo "update_type=$UPDATE_TYPE" >> "$GITHUB_OUTPUT"
           echo "ghsa=$GHSA_ID" >> "$GITHUB_OUTPUT"
-
       - name: Approve PR (if policy allows)
         if: steps.policy.outputs.action == 'automerge'
         env:
@@ -116,7 +110,6 @@ jobs:
         run: |
           gh pr review --approve "$PR_URL" \
             --body "Auto-approving Dependabot security update (${{ steps.policy.outputs.ghsa }}, ${{ steps.policy.outputs.update_type }}). Policy: low/moderate security patches/minors only."
-
       - name: Enable auto-merge (if policy allows)
         if: steps.policy.outputs.action == 'automerge'
         env:
@@ -124,7 +117,6 @@ jobs:
           PR_URL: ${{ github.event.pull_request.html_url }}
         run: |
           gh pr merge --auto --squash "$PR_URL"
-
       - name: Write decision to step summary
         env:
           ACTION: ${{ steps.policy.outputs.action }}
