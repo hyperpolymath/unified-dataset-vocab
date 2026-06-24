@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MPL-2.0
+// SPDX-License-Identifier: CC-BY-SA-4.0
 // Template: QUICKSTART-MAINTAINER.adoc — packaging, deploying, and maintaining
 // Replace unified-dataset-vocab, {{PACKAGE_NAME}}, {{DEPS}} with actuals
 = unified-dataset-vocab — Quick Start for Platform Maintainers

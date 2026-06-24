@@ -1,4 +1,4 @@
-<!-- SPDX-License-Identifier: MPL-2.0 -->
+<!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
 # Unified Dataset Vocab ABI/FFI Documentation
 
 ## Overview
@@ -373,7 +373,7 @@ When modifying the ABI/FFI:
 
 ## License
 
-SPDX-License-Identifier: MPL-2.0
+SPDX-License-Identifier: CC-BY-SA-4.0
 
 ## See Also
 
