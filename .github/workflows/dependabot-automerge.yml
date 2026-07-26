@@ -41,6 +41,7 @@ on:
     types: [opened, reopened, synchronize]
 
 permissions:
+  actions: read
   contents: write        # needed to enable auto-merge
   pull-requests: write   # needed to approve
   # NB: keep narrow — do NOT add secrets: read or id-token: write here.
