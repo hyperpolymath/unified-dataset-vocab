@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: CC-BY-SA-4.0
 // Template: QUICKSTART-MAINTAINER.adoc — packaging, deploying, and maintaining
-// Replace unified-dataset-vocab, {{PACKAGE_NAME}}, {{DEPS}} with actuals
+// Replace unified-dataset-vocab, unified-dataset-vocab, {{DEPS}} with actuals
 = unified-dataset-vocab — Quick Start for Platform Maintainers
 :toc:
 :toclevels: 2
@@ -65,10 +65,10 @@ Files installed:
 | `$PREFIX/bin/`
 | Executables
 
-| `$PREFIX/share/{{PACKAGE_NAME}}/`
+| `$PREFIX/share/unified-dataset-vocab/`
 | Data files, assets
 
-| `$PREFIX/share/doc/{{PACKAGE_NAME}}/`
+| `$PREFIX/share/doc/unified-dataset-vocab/`
 | Documentation
 
 | `$PREFIX/share/applications/`
@@ -80,9 +80,9 @@ Files installed:
 
 == Configuration
 
-Default config location: `$XDG_CONFIG_HOME/{{PACKAGE_NAME}}/config.toml`
+Default config location: `$XDG_CONFIG_HOME/unified-dataset-vocab/config.toml`
 
-Fallback: `$HOME/.config/{{PACKAGE_NAME}}/config.toml`
+Fallback: `$HOME/.config/unified-dataset-vocab/config.toml`
 
 == Health Checks
 
@@ -102,7 +102,7 @@ just build-release
 just install --prefix=/usr/local
 ----
 
-Or via OPSM: `opsm update {{PACKAGE_NAME}}`
+Or via OPSM: `opsm update unified-dataset-vocab`
 
 == Security Notes
 
@@ -117,8 +117,8 @@ For deploying multiple instances (e.g., different users or tenants):
 
 [source,bash]
 ----
-just install --prefix=/opt/{{PACKAGE_NAME}}-instance1 --config=/etc/{{PACKAGE_NAME}}/instance1.toml
-just install --prefix=/opt/{{PACKAGE_NAME}}-instance2 --config=/etc/{{PACKAGE_NAME}}/instance2.toml
+just install --prefix=/opt/unified-dataset-vocab-instance1 --config=/etc/unified-dataset-vocab/instance1.toml
+just install --prefix=/opt/unified-dataset-vocab-instance2 --config=/etc/unified-dataset-vocab/instance2.toml
 ----
 
 Each instance has isolated config, data, and logs.
