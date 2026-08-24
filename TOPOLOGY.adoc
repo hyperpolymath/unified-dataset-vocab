@@ -1,12 +1,8 @@
-<!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
-<!-- TOPOLOGY.md — Project architecture map and completion dashboard -->
-<!-- Last updated: 2026-02-19 -->
+== Unified Dataset Vocab — Project Topology
 
-# Unified Dataset Vocab — Project Topology
+=== System Architecture
 
-## System Architecture
-
-```
+....
                         ┌─────────────────────────────────────────┐
                         │              VOCABULARY USER            │
                         │        (Schema Design / Data Eng)       │
@@ -38,11 +34,11 @@
                         │  Justfile Automation  .machine_readable/  │
                         │  ABI-FFI Standards    0-AI-MANIFEST.a2ml  │
                         └─────────────────────────────────────────┘
-```
+....
 
-## Completion Dashboard
+=== Completion Dashboard
 
-```
+....
 COMPONENT                          STATUS              NOTES
 ─────────────────────────────────  ──────────────────  ─────────────────────────────────
 CORE VOCABULARY
@@ -62,25 +58,26 @@ REPO INFRASTRUCTURE
 
 ─────────────────────────────────────────────────────────────────────────────
 OVERALL:                            █████░░░░░  ~50%   Infrastructure stable, Vocab maturing
-```
+....
 
-## Key Dependencies
+=== Key Dependencies
 
-```
+....
 Philosophy ──────► Vocabulary Spec ──────► Idris2 Proof ──────► C ABI Header
      │                 │                      │                    │
      ▼                 ▼                      ▼                    ▼
 CCCP Policy ─────► 0-AI-MANIFEST ────────► Just Build ────────► Compliance
-```
+....
 
-## Update Protocol
+=== Update Protocol
 
 This file is maintained by both humans and AI agents. When updating:
 
-1. **After completing a component**: Change its bar and percentage
-2. **After adding a component**: Add a new row in the appropriate section
-3. **After architectural changes**: Update the ASCII diagram
-4. **Date**: Update the `Last updated` comment at the top of this file
+[arabic]
+. *After completing a component*: Change its bar and percentage
+. *After adding a component*: Add a new row in the appropriate section
+. *After architectural changes*: Update the ASCII diagram
+. *Date*: Update the `+Last updated+` comment at the top of this file
 
-Progress bars use: `█` (filled) and `░` (empty), 10 characters wide.
-Percentages: 0%, 10%, 20%, ... 100% (in 10% increments).
+Progress bars use: `+█+` (filled) and `+░+` (empty), 10 characters wide.
+Percentages: 0%, 10%, 20%, … 100% (in 10% increments).
