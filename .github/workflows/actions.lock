@@ -19,8 +19,28 @@ workflows:
         - 'dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98'
     '.github/workflows/dogfood-gate.yml':
         - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
+    # Reached through the pinned governance reusable. The runner validates the
+    # refs a reusable reaches against THIS workflow's entry; `gh actions-lock`
+    # reads only step-level `uses:` and cannot derive these edges.
+    '.github/workflows/governance.yml':
+        - 'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
+        - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
+        - 'editorconfig-checker/action-editorconfig-checker@840e866d93b8e032123c23bac69dece044d4d84c'
+        - 'erlef/setup-beam@54075bcc5e249e4758d363f27d099f55d843f124'
+    # Reached through the pinned Hypatia reusable (same rule as above).
+    '.github/workflows/hypatia-scan.yml':
+        - 'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
+        - 'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
+        - 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a'
+        - 'erlef/setup-beam@54075bcc5e249e4758d363f27d099f55d843f124'
+        - 'github/codeql-action@7188fc363630916deb702c7fdcf4e481b751f97a'
     '.github/workflows/instant-sync.yml':
         - 'peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697'
+    # Reached through the pinned Mirror reusable (same rule as above).
+    '.github/workflows/mirror.yml':
+        - 'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
+        - 'dtolnay/rust-toolchain@67ef31d5b988238dd797d409d6f9574278e20537'
+        - 'webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555'
     '.github/workflows/pages.yml':
         - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
         - 'actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346'
@@ -31,6 +51,11 @@ workflows:
     # hyperpolymath/cicd-suite/.github/workflows/secret-scanner-reusable.yml;
     # the runner validates it against THIS workflow's entry. `gh actions-lock`
     # cannot see the edge, so re-add it by hand after any regeneration.
+    # Reached through the pinned Scorecard reusable (same rule as above).
+    '.github/workflows/scorecard.yml':
+        - 'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
+        - 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a'
+        - 'ossf/scorecard-action@4eaacf0543bb3f2c246792bd56e8cdeffafb205a'
     '.github/workflows/secret-scanner.yml':
         - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
 dependencies:
@@ -44,6 +69,11 @@ dependencies:
         commit: 'sha1-3d3c42e5aac5ba805825da76410c181273ba90b1'
         owner_id: 44036562
         repo_id: 197814629
+    'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0':
+        ref: 'v7.0.0'
+        commit: 'sha1-9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
+        owner_id: 44036562
+        repo_id: 197814629
     'actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d':
         ref: 'v6.0.0'
         commit: 'sha1-45bfe0192ca1faeb007ade9deae92b16b8254a0d'
@@ -54,6 +84,11 @@ dependencies:
         commit: 'sha1-368f82528645a54fb793d4d04e342629a3f51346'
         owner_id: 44036562
         repo_id: 438112499
+    'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a':
+        ref: 'v7.0.1'
+        commit: 'sha1-043fb46d1a93c77aae656e7c1c64a875d1fc6a0a'
+        owner_id: 44036562
+        repo_id: 192625955
     'actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f':
         ref: 'v7.0.0'
         commit: 'sha1-bbbca2ddaa5d8feaa63e36b76fdaad77386f024f'
@@ -71,11 +106,32 @@ dependencies:
         commit: 'sha1-25dd0e34f4fe68f24cc83900b1fe3fe149efef98'
         owner_id: 27347476
         repo_id: 371068214
+    # tag verified v4.37.1; the upstream reusable's `# v3` comment is stale
+    'github/codeql-action@7188fc363630916deb702c7fdcf4e481b751f97a':
+        ref: 'v4.37.1'
+        commit: 'sha1-7188fc363630916deb702c7fdcf4e481b751f97a'
+        owner_id: 9919
+        repo_id: 259445878
     'github/codeql-action@9b3254085494b55a0f7c4c2b3d2d52cc712ce370':
         ref: 'v4.39.1'
         commit: 'sha1-9b3254085494b55a0f7c4c2b3d2d52cc712ce370'
         owner_id: 9919
         repo_id: 259445878
+    'dtolnay/rust-toolchain@67ef31d5b988238dd797d409d6f9574278e20537':
+        ref: 'stable'
+        commit: 'sha1-67ef31d5b988238dd797d409d6f9574278e20537'
+        owner_id: 1940490
+        repo_id: 260749683
+    'editorconfig-checker/action-editorconfig-checker@840e866d93b8e032123c23bac69dece044d4d84c':
+        ref: 'v2.2.0'
+        commit: 'sha1-840e866d93b8e032123c23bac69dece044d4d84c'
+        owner_id: 26415196
+        repo_id: 297874902
+    'erlef/setup-beam@54075bcc5e249e4758d363f27d099f55d843f124':
+        ref: 'v1.24.1'
+        commit: 'sha1-54075bcc5e249e4758d363f27d099f55d843f124'
+        owner_id: 47606891
+        repo_id: 331103973
     'haskell-actions/setup@0f8e8c99d88aeb3fbfd523f1ef2c6f762d10d64d':
         ref: 'v2.12.1'
         commit: 'sha1-0f8e8c99d88aeb3fbfd523f1ef2c6f762d10d64d'
@@ -86,8 +142,18 @@ dependencies:
         commit: 'sha1-e384daf6167a7a7567642d6a62060106244d2413'
         owner_id: 6759885
         repo_id: 1352485172
+    'ossf/scorecard-action@4eaacf0543bb3f2c246792bd56e8cdeffafb205a':
+        ref: 'v2.4.3'
+        commit: 'sha1-4eaacf0543bb3f2c246792bd56e8cdeffafb205a'
+        owner_id: 67707773
+        repo_id: 421101922
     'peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697':
         ref: 'v4.0.1'
         commit: 'sha1-28959ce8df70de7be546dd1250a005dd32156697'
         owner_id: 18365890
         repo_id: 220359305
+    'webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555':
+        ref: 'v0.10.0'
+        commit: 'sha1-e83874834305fe9a4a2997156cb26c5de65a8555'
+        owner_id: 135788
+        repo_id: 208510314
