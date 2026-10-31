@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MPL-2.0
 # This workflow is managed by gh actions-lock.
 # governance.yml — single wrapper calling the shared estate governance bundle
-# in hyperpolymath/standards instead of carrying per-repo copies.
+# in metadatastician/standards instead of carrying per-repo copies.
 #
 # Replaces the per-repo governance scaffolding removed in the same commit:
 #   quality.yml, guix-nix-policy.yml, npm-bun-blocker.yml, ts-blocker.yml,
@@ -11,6 +11,9 @@
 # Load-bearing build/security workflows stay standalone in the repo
 # (rust-ci, codeql, dependabot, release, scan/mirror/pages plumbing).
 
+# NOTE: the reusable lives under metadatastician/standards; the repository was
+# transferred out of the hyperpolymath org. Actions does not follow the rename,
+# so a hyperpolymath/standards ref fails at startup with zero jobs.
 name: Governance
 
 on:
@@ -33,4 +36,4 @@ permissions:
 
 jobs:
   governance:
-    uses: hyperpolymath/standards/.github/workflows/governance-reusable.yml@fad242d35291de1898242d6737ba02b74a59a2f2
+    uses: metadatastician/standards/.github/workflows/governance-reusable.yml@fad242d35291de1898242d6737ba02b74a59a2f2
