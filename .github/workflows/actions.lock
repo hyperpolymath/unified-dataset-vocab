@@ -27,6 +27,12 @@ workflows:
         - 'actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9'
     '.github/workflows/push-email-notify.yml':
         - 'hyperpolymath/smtp-notify-action@e384daf6167a7a7567642d6a62060106244d2413'
+    # Reached through the pinned reusable at
+    # hyperpolymath/cicd-suite/.github/workflows/secret-scanner-reusable.yml;
+    # the runner validates it against THIS workflow's entry. `gh actions-lock`
+    # cannot see the edge, so re-add it by hand after any regeneration.
+    '.github/workflows/secret-scanner.yml':
+        - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
 dependencies:
     'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9':
         ref: 'v6.1.0'
