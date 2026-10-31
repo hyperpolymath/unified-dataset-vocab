@@ -12,8 +12,12 @@
 # (rust-ci, codeql, dependabot, release, scan/mirror/pages plumbing).
 
 # NOTE: the reusable lives under metadatastician/standards; the repository was
-# transferred out of the hyperpolymath org. Actions does not follow the rename,
-# so a hyperpolymath/standards ref fails at startup with zero jobs.
+# transferred out of the hyperpolymath org, and Actions does not follow the
+# rename. This pin is also a commit whose callee actions.lock is runner-valid:
+# GitHub validates a called reusable against the CALLEE's lock at the called
+# SHA and rejects a dependency record whose `ref:` is its own commit SHA.
+# The previous pin (fad242d, 2026-09-07) had exactly that defect, which failed
+# every job at `Set up job` with "invalid lockfile pin".
 name: Governance
 
 on:
@@ -36,4 +40,4 @@ permissions:
 
 jobs:
   governance:
-    uses: metadatastician/standards/.github/workflows/governance-reusable.yml@fad242d35291de1898242d6737ba02b74a59a2f2
+    uses: metadatastician/standards/.github/workflows/governance-reusable.yml@1725bebd3773ea25627479f813283abf1c497a85
