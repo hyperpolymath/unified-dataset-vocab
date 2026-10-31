@@ -1,5 +1,8 @@
 # SPDX-License-Identifier: MPL-2.0
 # This workflow is managed by gh actions-lock.
+# NOTE: the reusable lives under metadatastician/standards; the repository was
+# transferred out of the hyperpolymath org. Actions does not follow the rename,
+# so a hyperpolymath/standards ref fails at startup with zero jobs.
 name: Mirror to Git Forges
 
 on:
@@ -13,5 +16,5 @@ permissions:
 
 jobs:
   mirror:
-    uses: hyperpolymath/standards/.github/workflows/mirror-reusable.yml@d135b05bfc647d0c0fbfedc7e80f37ea50f49236
+    uses: metadatastician/standards/.github/workflows/mirror-reusable.yml@d135b05bfc647d0c0fbfedc7e80f37ea50f49236
     secrets: inherit

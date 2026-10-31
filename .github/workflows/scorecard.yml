@@ -1,5 +1,8 @@
 # SPDX-License-Identifier: MPL-2.0
 # This workflow is managed by gh actions-lock.
+# NOTE: the reusable lives under metadatastician/standards; the repository was
+# transferred out of the hyperpolymath org. Actions does not follow the rename,
+# so a hyperpolymath/standards ref fails at startup with zero jobs.
 name: Scorecards supply-chain security
 
 on:
@@ -11,7 +14,7 @@ permissions: read-all
 
 jobs:
   analysis:
-    uses: hyperpolymath/standards/.github/workflows/scorecard-reusable.yml@81dbf2dd854b1444fd6236fa2352474383b2c2b9
+    uses: metadatastician/standards/.github/workflows/scorecard-reusable.yml@81dbf2dd854b1444fd6236fa2352474383b2c2b9
     permissions:
       contents: read
       security-events: write
