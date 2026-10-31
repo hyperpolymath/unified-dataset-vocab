@@ -23,19 +23,10 @@ workflows:
     # refs a reusable reaches against THIS workflow's entry; `gh actions-lock`
     # reads only step-level `uses:` and cannot derive these edges.
     '.github/workflows/governance.yml':
-        - 'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
-        - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
-        - 'denoland/setup-deno@22d081ff2d3a40755e97629de92e3bcbfa7cf2ed'
-        - 'editorconfig-checker/action-editorconfig-checker@51f63319f592f97930c73d9c46184d20bd206393'
-        - 'erlef/setup-beam@54075bcc5e249e4758d363f27d099f55d843f124'
-        - 'oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6'
-    # Reached through the pinned Hypatia reusable (same rule as above).
+        []
+    # Calls a reusable and has no step-level `uses:` (see governance.yml above).
     '.github/workflows/hypatia-scan.yml':
-        - 'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
-        - 'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
-        - 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a'
-        - 'erlef/setup-beam@54075bcc5e249e4758d363f27d099f55d843f124'
-        - 'github/codeql-action@7188fc363630916deb702c7fdcf4e481b751f97a'
+        []
     '.github/workflows/instant-sync.yml':
         - 'peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697'
     # Reached through the pinned Mirror reusable (same rule as above).
@@ -44,9 +35,7 @@ workflows:
     # so it satisfies the lock pin contract, but it will drift if upstream
     # moves `stable`.
     '.github/workflows/mirror.yml':
-        - 'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
-        - 'dtolnay/rust-toolchain@67ef31d5b988238dd797d409d6f9574278e20537'
-        - 'webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555'
+        []
     '.github/workflows/pages.yml':
         - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
         - 'actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346'
@@ -55,13 +44,11 @@ workflows:
         - 'hyperpolymath/smtp-notify-action@e384daf6167a7a7567642d6a62060106244d2413'
     # Reached through the pinned cicd-suite reusable; re-add by hand after any
     # `gh actions-lock` regeneration, which cannot see the edge.
-    # Reached through the pinned Scorecard reusable (same rule as above).
+    # Calls a reusable and has no step-level `uses:` (see governance.yml above).
     '.github/workflows/scorecard.yml':
-        - 'actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0'
-        - 'actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a'
-        - 'ossf/scorecard-action@4eaacf0543bb3f2c246792bd56e8cdeffafb205a'
+        []
     '.github/workflows/secret-scanner.yml':
-        - 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1'
+        []
 dependencies:
     'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9':
         ref: 'v6.1.0'
