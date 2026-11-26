@@ -1,7 +1,1 @@
-{
-  "name": "unified-dataset-vocab",
-  "private": true,
-  "devDependencies": {
-    "prettier": "3.10.1"
-  }
-}
+{"devDependencies":{"prettier":"3.10.1"},"name":"unified-dataset-vocab","private":true}
