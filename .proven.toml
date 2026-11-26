@@ -1,0 +1,49 @@
+# SPDX-License-Identifier: MPL-2.0
+# Manifest for this repository (schema proven/manifest/v1); see
+# hyperpolymath/proven-cicd-and-workflows docs/PROVEN-ADOPTION.adoc.
+#
+# This is a vocabulary/specification repository. Its only compiled code is a
+# Zig FFI shim (ffi/zig) and Idris2 ABI sources (src/abi). It has no test suite
+# beyond the Zig FFI tests, which do not currently compile (see waivers).
+schema = "proven/manifest/v1"
+
+[languages.ignore.idris2]
+reason = "Idris2 ABI sources (src/abi/*.idr); umbrella release 0.1 provisions no Idris2 toolchain"
+
+# ---- zig ---------------------------------------------------------------------
+# Verified locally with Zig 0.15.2: `zig build` in ffi/zig fails because
+# build.zig uses b.addSharedLibrary (removed from std.Build), and src/main.zig
+# declares an opaque type with fields. The FFI tests (3 in main.zig, 15 in
+# test/integration_test.zig) therefore cannot run. Waived, not N/A: the tests exist.
+[categories.unit.zig.waiver]
+reason = "ffi/zig does not compile on Zig 0.15.2 (build.zig addSharedLibrary removed; main.zig opaque type has fields), so its 18 tests cannot run; needs a port to the current std.Build API"
+until = "2027-01-15"
+
+[categories.build.zig.waiver]
+reason = "same cause as unit: ffi/zig/build.zig does not build on Zig 0.15.2"
+until = "2027-01-15"
+
+[categories.smoke.zig.waiver]
+reason = "no smoke test exists and the only runnable artefact (the FFI library) does not build; see unit"
+until = "2027-01-15"
+
+[categories.p2p.zig.waiver]
+reason = "the Zig FFI / Idris2 ABI seam is the only seam and is untestable until ffi/zig builds; see unit"
+until = "2027-01-15"
+
+# ---- shell -------------------------------------------------------------------
+# setup.sh and .githooks/*.sh: install and hook helpers. No tests exist
+# (TEST-NEEDS.adoc lists vocabulary validation and schema tests as missing).
+[categories.unit.shell.waiver]
+reason = "no tests exist for setup.sh or the git hooks; TEST-NEEDS.adoc lists vocabulary validation, schema and interoperability tests as missing"
+until = "2027-01-15"
+
+[categories.smoke.shell.waiver]
+reason = "no smoke test exists for the shell helpers; see unit"
+until = "2027-01-15"
+
+[categories.build.shell]
+na = "interpreted scripts, nothing to compile"
+
+[categories.p2p.shell]
+na = "setup.sh and the hooks are independent helpers with no inter-component seam"
