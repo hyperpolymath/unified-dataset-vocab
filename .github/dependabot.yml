@@ -41,6 +41,13 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 3
 
+  # Bun (bun.lock): same directory and schedule as npm, so Dependabot keeps bun.lock in step
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
+
   # Python/pip
   - package-ecosystem: "pip"
     directory: "/"
