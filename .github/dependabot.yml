@@ -3,6 +3,12 @@
 # Covers common ecosystems - remove unused ones for your project
 
 version: 2
+
+multi-ecosystem-groups:
+  js-locks:
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 3
 updates:
   # GitHub Actions - always include
   - package-ecosystem: "github-actions"
@@ -37,9 +43,14 @@ updates:
   # Node.js/npm
   - package-ecosystem: "npm"
     directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 3
+    multi-ecosystem-group: "js-locks"
+    patterns: ["*"]
+
+  # Bun (bun.lock): in the js-locks group with npm, so one PR moves package.json and bun.lock together
+  - package-ecosystem: "bun"
+    directory: "/"
+    multi-ecosystem-group: "js-locks"
+    patterns: ["*"]
 
   # Python/pip
   - package-ecosystem: "pip"

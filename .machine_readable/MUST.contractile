@@ -46,7 +46,7 @@
     (must "no new TypeScript files")
     (must "no new Python files")
     (must "no new Go files")
-    (must "no npm/bun/yarn/pnpm dependencies — Deno only")
+    (must "no yarn dependencies — Bun is the tier 1 JS runtime; Deno, pnpm and npm are fallbacks")
 
     ; Dangerous patterns
     (must "no believe_me (Idris2)")
